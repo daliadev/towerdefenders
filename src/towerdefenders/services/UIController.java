@@ -5,6 +5,7 @@
  */
 package towerdefenders.services;
 
+import javax.swing.JPanel;
 import towerdefenders.sprites.Base;
 import towerdefenders.sprites.Sprite;
 import towerdefenders.ui.*;
@@ -30,7 +31,7 @@ public class UIController {
     
     private SpritesController sprController;
     
-    private Playground ground = getWindow().board;
+    private JPanel ground = getWindow().board;
     
 
     public static GameWindow getWindow(){
@@ -46,9 +47,16 @@ public class UIController {
         
         sprController = new SpritesController(ground);
         
-        //Sprite base = new Base(0, 0, 0, 0, img);
-        //sprController.addSprite(base);
+        Sprite base = new Base(0, 0, 150, 140, img);
+        sprController.addSprite(base);
+        ground.add(base);
+        
+        ground.d
     }
+    
+    
+    
+    
     
     
 }

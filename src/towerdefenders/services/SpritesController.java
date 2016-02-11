@@ -5,6 +5,7 @@
  */
 package towerdefenders.services;
 
+import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.swing.JPanel;
@@ -47,7 +48,8 @@ public class SpritesController {
     
     public void addSprite(Sprite spr) {
         
-        this.sprites.add(spr);
+        sprites.add(spr);
+        //this.container.add((Component) spr);
     }
     
     public void removeSprite(Sprite spr) {
