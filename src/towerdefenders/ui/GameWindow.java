@@ -55,9 +55,10 @@ public class GameWindow extends javax.swing.JFrame {
         sidebar.setAlignmentX(0.0F);
         sidebar.setAlignmentY(0.0F);
         sidebar.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        sidebar.setMinimumSize(new java.awt.Dimension(150, 400));
+        sidebar.setMaximumSize(new java.awt.Dimension(180, 32767));
+        sidebar.setMinimumSize(new java.awt.Dimension(180, 400));
         sidebar.setName("sidebar"); // NOI18N
-        sidebar.setPreferredSize(new java.awt.Dimension(150, 600));
+        sidebar.setPreferredSize(new java.awt.Dimension(180, 600));
 
         btn_start.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         btn_start.setText("Start/Stop");
@@ -100,7 +101,7 @@ public class GameWindow extends javax.swing.JFrame {
             .addGroup(sidebarLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_start, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                    .addComponent(btn_start, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
                     .addComponent(btn_ouvrier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(sidebarLayout.createSequentialGroup()
                         .addGroup(sidebarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,16 +133,22 @@ public class GameWindow extends javax.swing.JFrame {
                 .addComponent(lbl_ouvrier, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(lbl_mechant)
-                .addContainerGap(262, Short.MAX_VALUE))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
         lbl_ouvrier.getAccessibleContext().setAccessibleName("lbl_ouvrier");
+
+        board.setAlignmentX(0.0F);
+        board.setAlignmentY(0.0F);
+        board.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        board.setMinimumSize(new java.awt.Dimension(400, 400));
+        board.setPreferredSize(new java.awt.Dimension(600, 600));
 
         javax.swing.GroupLayout boardLayout = new javax.swing.GroupLayout(board);
         board.setLayout(boardLayout);
         boardLayout.setHorizontalGroup(
             boardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 586, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         boardLayout.setVerticalGroup(
             boardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,16 +161,17 @@ public class GameWindow extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(board, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(sidebar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE)
+            .addComponent(sidebar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(board, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         sidebar.getAccessibleContext().setAccessibleName("sidebar");
+        board.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

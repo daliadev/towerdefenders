@@ -21,10 +21,11 @@ import towerdefenders.interfaces.ISprite;
 public abstract class Sprite extends Rectangle implements ISprite, IDrawable {
     
     
-    private BufferedImage img;
+    protected BufferedImage img;
+    protected String name;
 
     
-    public Sprite(int x, int y, int width, int height, BufferedImage img) {
+    public Sprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
         super(x, y, width, height);
         this.img = img;
@@ -48,7 +49,15 @@ public abstract class Sprite extends Rectangle implements ISprite, IDrawable {
 
     @Override
     public void draw(Graphics g) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if (img != null) {
+            
+            g.drawImage(img, x, y, width, height, null);
+        }
+        else {
+            
+            g.drawRect(x, y, width, height);
+        }
     }
     
     

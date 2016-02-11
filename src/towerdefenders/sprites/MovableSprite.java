@@ -20,9 +20,9 @@ public class MovableSprite extends Sprite {
     public double directionY = 0;
     
     
-    public MovableSprite(int x, int y, int width, int height, BufferedImage img) {
+    public MovableSprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
-        super(x, y, width, height, img);
+        super(name, x, y, width, height, img);
     }
 
     

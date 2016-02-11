@@ -16,9 +16,9 @@ import java.awt.image.BufferedImage;
 public abstract class StaticSprite extends Sprite {
 
     
-    public StaticSprite(int x, int y, int width, int height, BufferedImage img) {
+    public StaticSprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
-        super(x, y, width, height, img);
+        super(name, x, y, width, height, img);
     }
     
 

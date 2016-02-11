@@ -1,6 +1,7 @@
 package towerdefenders.sprites;
 
 //import Resource.Resource;
+import java.awt.Graphics;
 import resources.Resource;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -17,10 +18,10 @@ import java.awt.image.BufferedImage;
 //import java.util.logging.Logger;
 //import javax.imageio.ImageIO;
 
-public class Projectile extends Sprite {
+public class Projectile extends MovableSprite {
     
-    public double sensx = (Math.random() * -25);
-    public double sensy = (Math.random() * 50) - 25;
+    //public double sensx = (Math.random() * -25);
+    //public double sensy = (Math.random() * 50) - 25;
     //private double posX = 0;
     //private double posY = 0;
     
@@ -31,9 +32,9 @@ public class Projectile extends Sprite {
     //private int explosionDuration = 3000; // milliseconds
     
     
-    public Projectile(int x, int y, int width, int height, BufferedImage img) {
+    public Projectile() {
         
-        super(x, y, width, height, img);
+        super("projectile", 0, 0, 0, 0, null);
         /*
         try
         {
@@ -45,7 +46,7 @@ public class Projectile extends Sprite {
         */
     }
     
-    
+    /*
     public double getSensx() {
         return sensx;
     }
@@ -83,7 +84,7 @@ public class Projectile extends Sprite {
         
         return new Point(x, y);
     }
-
+    */
     /*
     public boolean getIsExploding() {
         
@@ -97,7 +98,7 @@ public class Projectile extends Sprite {
     */
     
     @Override
-    public void draw(Graphics2D g) {
+    public void draw(Graphics g) {
 
         g.fillRect(x, y, 6, 6);
         

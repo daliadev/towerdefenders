@@ -9,6 +9,7 @@ import resources.Resource;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -16,6 +17,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import towerdefenders.sprites.Sprite;
+import towerdefenders.utils.ImageLoader;
 /*
 import premierjeu.bo.Mechant;
 import premierjeu.bo.Ouvrier;
@@ -30,11 +32,11 @@ import premierjeu.manager.TourelleManager;
  */
 public class Playground extends JPanel {
     
-    Image mine;
-    Image barrack;
-    Image grassTiles;
+    //Image mine;
+    //Image barrack;
+    //Image grassTiles;
     
-    private ArrayList<Sprite> sprites = new ArrayList<>();
+    //private ArrayList<Sprite> sprites = new ArrayList<>();
     
         
     
@@ -42,6 +44,7 @@ public class Playground extends JPanel {
         
         super(true); 
         
+        /*
         try {
             mine = ImageIO.read(Resource.class.getResource("mine_or.png"));
         } 
@@ -62,17 +65,21 @@ public class Playground extends JPanel {
         catch (IOException ex) {
             Logger.getLogger(Playground.class.getName()).log(Level.SEVERE, null, ex);
         }
+        */
     }
 
     
     @Override
     public void paintComponent(Graphics g){
-
+        
+        BufferedImage grassTiles = ImageLoader.load("motif_herbe.png");
+        
         Graphics2D background = (Graphics2D) g;
         //panneau.setColor(Color.GREEN);
         //panneau.fillRect(0, 0, getWidth(), getHeight());
         background.drawImage(grassTiles,0, 0, getWidth(), getHeight(), null);
-
+        
+        /*
         int i = 150;
         Graphics2D base = (Graphics2D) g;
         //base.setColor(Color.BLACK);
@@ -85,7 +92,7 @@ public class Playground extends JPanel {
         //stock.setColor(Color.CYAN);
         //stock.fillRect(getWidth() - j, getHeight() - j, j, j);
         stock.drawImage(mine, getWidth() - j, getHeight() - j, j, j, null); 
-        
+        */
         /*
         for (Ouvrier ouvrier : OuvrierManager.getClone()){
 

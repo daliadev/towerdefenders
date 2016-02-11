@@ -5,26 +5,19 @@
  */
 package towerdefenders.sprites;
 
-//import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 /**
  *
  * @author Nicolas
  */
-public class Base extends Sprite {
+public class BasicSprite extends Sprite {
 
     
-    public Base() {
+    public BasicSprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
-        super("base", 0, 0, 0, 0, null);
+        super(name, x, y, width, height, img);
     }
-
     
-    /*
-    @Override
-    public void draw(Graphics g) {
-        super.draw(g);
-    }
-    */
+    
 }

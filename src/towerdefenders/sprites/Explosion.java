@@ -5,7 +5,7 @@
  */
 package towerdefenders.sprites;
 
-import java.awt.image.BufferedImage;
+//import java.awt.image.BufferedImage;
 
 /**
  *
@@ -13,9 +13,9 @@ import java.awt.image.BufferedImage;
  */
 public class Explosion extends Sprite {
 
-    public Explosion(int x, int y, int width, int height, BufferedImage img) {
+    public Explosion() {
         
-        super(x, y, width, height, img);
+        super("explosion", 0, 0, 0, 0, null);
     }
     
     

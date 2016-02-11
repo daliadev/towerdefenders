@@ -6,10 +6,13 @@
 package towerdefenders.services;
 
 import java.awt.Component;
+import java.awt.Container;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Collection;
 import javax.swing.JPanel;
 import towerdefenders.sprites.Sprite;
+import towerdefenders.utils.ImageLoader;
 
 /**
  *
@@ -20,15 +23,17 @@ public class SpritesController {
     
     private ArrayList<Sprite> sprites = new ArrayList<>();
     
-    private JPanel container;
+    private Container container;
     
+    //private ImageLoader imgLoader;
     
     
     public SpritesController() {
         
     }
 
-    public SpritesController(JPanel container) {
+    public SpritesController(Container container) {
+        
         this.container = container;
     }
     
@@ -72,6 +77,18 @@ public class SpritesController {
     public void removeAllSprite() {
         
         this.sprites.removeAll((Collection<Sprite>) sprites);
+    }
+    
+    
+    public void drawAll() {
+        
+        for (Sprite sprite : sprites) {
+            
+            Graphics g = container.getGraphics();
+                
+            sprite.draw(g);
+
+        }
     }
     
     

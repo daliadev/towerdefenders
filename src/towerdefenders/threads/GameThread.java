@@ -14,20 +14,17 @@ import premierjeu.manager.OuvrierManager;
 import premierjeu.manager.TourelleManager;
 import premierjeu.manager.UIController;
 */
+
 /**
  *
- * @author valen_000
+ * @author nico
  */
 public class GameThread {
     
     public static boolean isStop = false;
     
-    public static void Stop()
-    {
-        isStop = true ; 
-    }
     
-    public static void LauchRepaintThread(){
+    public static void startGameThread() {
         
         new Thread(new Runnable(){
             @Override
@@ -53,7 +50,14 @@ public class GameThread {
        
     }
     
-    private static void Manage() throws InterruptedException{
+    
+    public static void stopGameThread() {
+        
+        isStop = true ; 
+    }
+    
+    
+    private static void Manage()throws InterruptedException{
         /*
         OuvrierManager.gestionMouvement();
         MechantManager.gestionMouvement();
@@ -62,8 +66,11 @@ public class GameThread {
         */
                 
         try {
-            Thread.sleep(40);
-        } catch (InterruptedException ex) {
+            
+            Thread.sleep(10);
+        } 
+        catch (InterruptedException ex) {
+            
             Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
@@ -73,10 +80,14 @@ public class GameThread {
         if (!isStop)
         {
             UIController.getWindow().board.repaint();
+            UIController.getSpritesController().drawAll();
             
             try {
-                Thread.sleep(40);
-            } catch (InterruptedException ex) {
+                
+                Thread.sleep(25);
+            } 
+            catch (InterruptedException ex) {
+                
                 Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

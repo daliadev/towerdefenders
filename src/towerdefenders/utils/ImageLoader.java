@@ -5,7 +5,7 @@
  */
 package towerdefenders.utils;
 
-import java.awt.Dimension;
+//import java.awt.Dimension;
 import resources.Resource;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,11 +16,10 @@ import javax.imageio.ImageIO;
  * @author Nicolas
  */
 public class ImageLoader {
-    
-    
-    public static boolean isLoaded = false;
+
     
     private static BufferedImage image;
+    public static boolean isLoaded = false;
     
     
     public static BufferedImage load(String filePath)
@@ -44,12 +43,8 @@ public class ImageLoader {
         
         return image;
     }
-    
-    public static boolean isLoaded() {
-        
-        return isLoaded;
-    }
-    
+
+    /*
     public static int getWidth() {
         
         return image.getWidth();
@@ -59,4 +54,5 @@ public class ImageLoader {
         
         return image.getHeight();
     }
+    */
 }

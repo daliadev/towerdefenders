@@ -19,14 +19,17 @@ public class TowerDefenders {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
         UIController.getWindow().setExtendedState(JFrame.MAXIMIZED_BOTH);                
         /*EntiteManager.init();*/
+        UIController.initBackground();
         UIController.getWindow().setVisible(true);
-        GameThread.LauchRepaintThread();        
-    
-        int countM;
-
+        
+        GameThread.startGameThread();        
+        
+        //GameThread.stopGameThread();
+        //int countM;
+        /*
         for (countM = 1; countM <= Float.POSITIVE_INFINITY ; countM++)
         {
             //Thread.sleep(20000);
@@ -40,11 +43,12 @@ public class TowerDefenders {
             else {
                 
                 UIController.getWindow().lbl_mechant.setText( countM  + " Montres");
-            }
-            
-            
+            } 
         }
+        */
         
+        
+        // Vieux code -> voir thread
         /*TimerTask task = new TimerTask()
 		{
 			@Override

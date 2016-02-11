@@ -30,9 +30,9 @@ public class Tourelle extends StaticSprite {
     //private BufferedImage explosion;
 
 
-    public Tourelle(int x, int y, int width, int height, BufferedImage img) {
+    public Tourelle() {
         
-        super(x, y, width, height, img);
+        super("tourelle", 0, 0, 0, 0, null);
         
         /*
         try {
