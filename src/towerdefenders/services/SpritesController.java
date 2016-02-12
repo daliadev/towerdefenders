@@ -26,7 +26,7 @@ public class SpritesController {
     private Container container;
     
     //private ImageLoader imgLoader;
-    
+    private boolean drawable = true;
     
     public SpritesController() {
         
@@ -82,12 +82,25 @@ public class SpritesController {
     
     public void drawAll() {
         
+        String name = null;
+        
         for (Sprite sprite : sprites) {
             
-            Graphics g = container.getGraphics();
+            name = sprite.getName();
+            
+            if (drawable) {
                 
-            sprite.draw(g);
+                Graphics g = container.getGraphics();
 
+                sprite.draw(g);
+
+                System.out.println(sprite.getName());
+            }
+        }
+        
+        if (name != null)
+        {
+            drawable = false;
         }
     }
     

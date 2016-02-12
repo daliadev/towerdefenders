@@ -74,10 +74,10 @@ public class Playground extends JPanel {
         
         BufferedImage grassTiles = ImageLoader.load("motif_herbe.png");
         
-        Graphics2D background = (Graphics2D) g;
+        //Graphics2D background = (Graphics2D) g;
         //panneau.setColor(Color.GREEN);
         //panneau.fillRect(0, 0, getWidth(), getHeight());
-        background.drawImage(grassTiles,0, 0, getWidth(), getHeight(), null);
+        g.drawImage(grassTiles,0, 0, getWidth(), getHeight(), null);
         
         /*
         int i = 150;

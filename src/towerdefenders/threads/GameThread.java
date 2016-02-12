@@ -80,7 +80,7 @@ public class GameThread {
         if (!isStop)
         {
             UIController.getWindow().board.repaint();
-            UIController.getSpritesController().drawAll();
+            //UIController.getSpritesController().drawAll();
             
             try {
                 

@@ -28,8 +28,22 @@ public abstract class Sprite extends Rectangle implements ISprite, IDrawable {
     public Sprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
         super(x, y, width, height);
+        
+        this.name = name;
         this.img = img;
     }
+
+    
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    
     
     
     @Override

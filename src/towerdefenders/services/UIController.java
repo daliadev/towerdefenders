@@ -5,8 +5,10 @@
  */
 package towerdefenders.services;
 
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
+import javax.swing.JPanel;
 //import javax.swing.JPanel;
 //import towerdefenders.sprites.Base;
 import towerdefenders.sprites.BasicSprite;
@@ -77,15 +79,22 @@ public class UIController {
         }
         */
         
+        
+        
         int posX, posY, w, h;
         Point groundCenter = new Point(getWindow().board.getWidth() / 2, getWindow().board.getHeight() / 2);
-        
  
         BufferedImage barrack = ImageLoader.load("barrack.png");
         posX = groundCenter.x - (barrack.getWidth() / 2);
         posY = groundCenter.y - (barrack.getHeight() / 2);
         Sprite base = new BasicSprite("base", posX, posY, barrack.getWidth(), barrack.getHeight(), barrack);
         getSpritesController().addSprite(base);
+        
+        Graphics g = getWindow().board.getGraphics();
+        
+        JPanel ground = getWindow().board;
+        ground.add(base);
+        ground.paint(g);
     }
     
     /*
