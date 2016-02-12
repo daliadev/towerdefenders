@@ -28,7 +28,7 @@ import premierjeu.manager.TourelleManager;
 */
 /**
  *
- * @author valen_000
+ * @author nico
  */
 public class Playground extends JPanel {
     
@@ -72,7 +72,7 @@ public class Playground extends JPanel {
     @Override
     public void paintComponent(Graphics g){
         
-        BufferedImage grassTiles = ImageLoader.load("motif_herbe.png");
+        BufferedImage grassTiles = ImageLoader.load("grass_tile.png");
         
         //Graphics2D background = (Graphics2D) g;
         //panneau.setColor(Color.GREEN);

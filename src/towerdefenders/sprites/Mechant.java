@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 
-public class Mechant extends MovableSprite {
+public class Mechant extends Sprite {
     
     public int count = 0;
     public int countMax = 150;
@@ -14,7 +14,7 @@ public class Mechant extends MovableSprite {
     
     public Mechant() {
         
-        super("mechant", 0, 0, 0, 0, null);
+        //super("mechant", 0, 0, 0, 0, null);
         
         /*
         try {
@@ -25,7 +25,7 @@ public class Mechant extends MovableSprite {
         */
     }
     
-    
+    /*
     public boolean getIsDead() {
         
         return this.isDead;
@@ -42,8 +42,6 @@ public class Mechant extends MovableSprite {
         
         super.draw(g);
         
-        /*g.setColor(Color.RED);
-        g.fillRect(x, y, width, height);*/
         //if (!isDead)
         //{
            g.drawImage(this.img, x, y, width, height, null); 
@@ -53,5 +51,5 @@ public class Mechant extends MovableSprite {
         //}
             
     }
-
+    */
 }

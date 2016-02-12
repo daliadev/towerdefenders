@@ -7,11 +7,11 @@ package towerdefenders.services;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
-//import javax.swing.JPanel;
-//import towerdefenders.sprites.Base;
 import towerdefenders.sprites.BasicSprite;
+
 import towerdefenders.sprites.Sprite;
 import towerdefenders.ui.*;
 import towerdefenders.utils.ImageLoader;
@@ -81,20 +81,20 @@ public class UIController {
         
         
         
-        int posX, posY, w, h;
-        Point groundCenter = new Point(getWindow().board.getWidth() / 2, getWindow().board.getHeight() / 2);
+        int posX, posY;
+        Rectangle surface = getWindow().board.getVisibleRect();
+        Point groundCenter = new Point(surface.width / 2, surface.getSize().height / 2);
  
-        BufferedImage barrack = ImageLoader.load("barrack.png");
+        BufferedImage barrack = ImageLoader.load("basement.png");
         posX = groundCenter.x - (barrack.getWidth() / 2);
         posY = groundCenter.y - (barrack.getHeight() / 2);
-        Sprite base = new BasicSprite("base", posX, posY, barrack.getWidth(), barrack.getHeight(), barrack);
+        Sprite base = new BasicSprite("basement", posX, posY, barrack.getWidth(), barrack.getHeight(), barrack);
         getSpritesController().addSprite(base);
         
-        Graphics g = getWindow().board.getGraphics();
+        //Graphics g = getWindow().board.getGraphics();
         
-        JPanel ground = getWindow().board;
-        ground.add(base);
-        ground.paint(g);
+        //JPanel ground = getWindow().board;
+        //ground.paint(g);
     }
     
     /*
@@ -103,5 +103,10 @@ public class UIController {
         return ground;
     }
     */
+    
+    public static void draw() {
+        
+        getSpritesController().drawAll();
+    }
     
 }

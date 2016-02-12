@@ -5,16 +5,15 @@
  */
 package towerdefenders.interfaces;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
 /**
  *
- * @author nico
+ * @author Nicolas
  */
-public interface IDrawable {
+public interface IMovable {
     
     
-    public void display(Graphics g, BufferedImage img, int x, int y, int w, int h);
-
+    public void move();
+    
+    public void stop();
+    
 }

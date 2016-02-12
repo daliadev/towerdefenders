@@ -18,7 +18,7 @@ import java.awt.image.BufferedImage;
 //import java.util.logging.Logger;
 //import javax.imageio.ImageIO;
 
-public class Projectile extends MovableSprite {
+public class Projectile extends Sprite {
     
     //public double sensx = (Math.random() * -25);
     //public double sensy = (Math.random() * 50) - 25;

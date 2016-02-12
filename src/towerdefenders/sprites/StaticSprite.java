@@ -5,6 +5,7 @@
  */
 package towerdefenders.sprites;
 
+import towerdefenders.behaviors.Picture;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
@@ -14,8 +15,11 @@ import java.awt.image.BufferedImage;
  * @author Nicolas
  */
 public abstract class StaticSprite extends Sprite {
-
     
+    
+    public StaticSprite() {
+        //this.playground = new Picture();
+    }
     public StaticSprite(String name, int x, int y, int width, int height, BufferedImage img) {
         
         super(name, x, y, width, height, img);

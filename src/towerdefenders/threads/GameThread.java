@@ -25,12 +25,21 @@ public class GameThread {
     
     
     public static void startGameThread() {
-        
+        /*
         new Thread(new Runnable(){
             @Override
             public void run(){
                 while (true) {                    
-                    Repaint();
+                    paint();
+                }                
+            }                
+        }).start();
+        */
+        new Thread(new Runnable(){
+            @Override
+            public void run(){
+                while (true) {                    
+                    repaint();
                 }                
             }                
         }).start();
@@ -40,7 +49,7 @@ public class GameThread {
             public void run(){
                 while (true) {                    
                     try {
-                        Manage();
+                        manage();
                     } catch (InterruptedException ex) {
                         Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -57,7 +66,7 @@ public class GameThread {
     }
     
     
-    private static void Manage()throws InterruptedException{
+    private static void manage()throws InterruptedException{
         /*
         OuvrierManager.gestionMouvement();
         MechantManager.gestionMouvement();
@@ -74,13 +83,14 @@ public class GameThread {
             Logger.getLogger(GameThread.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
-
-    private static void Repaint() {
+    
+    
+    private static void repaint() {
        
         if (!isStop)
         {
-            UIController.getWindow().board.repaint();
-            //UIController.getSpritesController().drawAll();
+            //UIController.getWindow().board.repaint();
+            UIController.draw();
             
             try {
                 

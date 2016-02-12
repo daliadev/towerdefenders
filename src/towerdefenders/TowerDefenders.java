@@ -50,16 +50,16 @@ public class TowerDefenders {
         
         // Vieux code -> voir thread
         /*TimerTask task = new TimerTask()
-		{
-			@Override
-			public void run() 
-			{
-                                MechantManager.init();  
-			}	
-		};
-		
-		Timer timer = new Timer();
-		timer.scheduleAtFixedRate(task, 0, 20000);*/
+        {
+                @Override
+                public void run() 
+                {
+                        MechantManager.init();  
+                }	
+        };
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(task, 0, 20000);*/
     }
     
 }

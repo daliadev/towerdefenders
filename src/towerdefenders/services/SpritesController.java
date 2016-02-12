@@ -5,7 +5,6 @@
  */
 package towerdefenders.services;
 
-import java.awt.Component;
 import java.awt.Container;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -82,26 +81,27 @@ public class SpritesController {
     
     public void drawAll() {
         
-        String name = null;
+        //String name = null;
         
         for (Sprite sprite : sprites) {
             
-            name = sprite.getName();
+            //name = sprite.getName();
             
-            if (drawable) {
+            // if (drawable) {
                 
                 Graphics g = container.getGraphics();
 
                 sprite.draw(g);
 
-                System.out.println(sprite.getName());
-            }
+                //System.out.println(sprite.getName());
+            //}
         }
-        
+        /*
         if (name != null)
         {
             drawable = false;
         }
+        */
     }
     
     

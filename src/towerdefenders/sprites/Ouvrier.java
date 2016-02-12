@@ -14,7 +14,7 @@ import javax.imageio.ImageIO;
 */
 //import premierjeu.interfaces.IDrawable;
 
-public class Ouvrier extends MovableSprite {
+public class Ouvrier extends Sprite {
     
 
     public  boolean charger;

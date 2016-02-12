@@ -12,7 +12,7 @@ import java.awt.image.BufferedImage;
  *
  * @author Nico
  */
-public interface ISprite<T> {
+public interface ISpritable<T> {
 
     //public List<T> getAll();
     /*

@@ -5,16 +5,19 @@
  */
 package towerdefenders.interfaces;
 
-import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-
 /**
  *
- * @author nico
+ * @author Nicolas
  */
-public interface IDrawable {
+public interface ICountable {
     
     
-    public void display(Graphics g, BufferedImage img, int x, int y, int w, int h);
-
+    public int getCount();
+    
+    public void setCount(int count);
+    
+    public void increase();
+    
+    public void decrease();
+    
 }
