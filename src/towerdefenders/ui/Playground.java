@@ -69,6 +69,7 @@ public class Playground extends JPanel {
     }
 
     
+    
     @Override
     public void paintComponent(Graphics g){
         

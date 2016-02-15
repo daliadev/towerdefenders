@@ -1,6 +1,9 @@
 package towerdefenders.ui;
 
 //import premierjeu.manager.OuvrierManager;
+
+import towerdefenders.services.UIController;
+
 //import premierjeu.manager.TourelleManager;
 
 public class GameWindow extends javax.swing.JFrame {
@@ -47,8 +50,9 @@ public class GameWindow extends javax.swing.JFrame {
         setTitle("Tower Defenders");
         setAlwaysOnTop(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setMaximumSize(new java.awt.Dimension(32767, 32767));
+        setMinimumSize(new java.awt.Dimension(580, 400));
         setName("gamewindow"); // NOI18N
-        setResizable(false);
 
         sidebar.setBackground(new java.awt.Color(50, 153, 66));
         sidebar.setToolTipText("");
@@ -68,22 +72,28 @@ public class GameWindow extends javax.swing.JFrame {
             }
         });
 
+        life.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         life.setForeground(new java.awt.Color(255, 255, 255));
         life.setText("5 Vies");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("0 Expérience ");
 
+        lbl_ouvrier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lbl_ouvrier.setForeground(new java.awt.Color(255, 255, 255));
         lbl_ouvrier.setText("0 ouvrier");
 
+        lbl_tourelle.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lbl_tourelle.setForeground(new java.awt.Color(255, 255, 255));
         lbl_tourelle.setText("0 Tourelle ");
 
+        lbl_mechant.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         lbl_mechant.setForeground(new java.awt.Color(255, 255, 255));
         lbl_mechant.setText("0 Monstre");
         lbl_mechant.setToolTipText("");
 
+        btn_ouvrier.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         btn_ouvrier.setText("Ouvrier");
         btn_ouvrier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +101,7 @@ public class GameWindow extends javax.swing.JFrame {
             }
         });
 
+        coin.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         coin.setForeground(new java.awt.Color(255, 255, 255));
         coin.setText("0 Coin");
 
@@ -133,7 +144,7 @@ public class GameWindow extends javax.swing.JFrame {
                 .addComponent(lbl_ouvrier, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(lbl_mechant)
-                .addContainerGap(268, Short.MAX_VALUE))
+                .addContainerGap(263, Short.MAX_VALUE))
         );
 
         lbl_ouvrier.getAccessibleContext().setAccessibleName("lbl_ouvrier");
@@ -142,7 +153,13 @@ public class GameWindow extends javax.swing.JFrame {
         board.setAlignmentY(0.0F);
         board.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
         board.setMinimumSize(new java.awt.Dimension(400, 400));
+        board.setName("board"); // NOI18N
         board.setPreferredSize(new java.awt.Dimension(600, 600));
+        board.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                boardComponentResized(evt);
+            }
+        });
 
         javax.swing.GroupLayout boardLayout = new javax.swing.GroupLayout(board);
         board.setLayout(boardLayout);
@@ -171,7 +188,7 @@ public class GameWindow extends javax.swing.JFrame {
         );
 
         sidebar.getAccessibleContext().setAccessibleName("sidebar");
-        board.getAccessibleContext().setAccessibleName("");
+        board.getAccessibleContext().setAccessibleName("board");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -182,16 +199,18 @@ public class GameWindow extends javax.swing.JFrame {
 
     private void btn_ouvrierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ouvrierActionPerformed
         //OuvrierManager.init();  
+        /*
         count++;
         if (count <= 1) {
             lbl_ouvrier.setText(count + " ouvrier");
         } else {
             lbl_ouvrier.setText(count + " ouvriers");
         }
+        */
     }//GEN-LAST:event_btn_ouvrierActionPerformed
 
     private void panneauMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panneauMouseClicked
-        
+        /*
         int x = evt.getX();
         int y = evt.getY();
         
@@ -204,7 +223,17 @@ public class GameWindow extends javax.swing.JFrame {
         } else {
             lbl_tourelle.setText(countT + " Tourelles");
         }
+        */
     }//GEN-LAST:event_panneauMouseClicked
+
+    
+    
+    private void boardComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_boardComponentResized
+        // TODO add your handling code here:
+        //System.out.println(evt.getComponent().getBounds());
+        //evt.getComponent().update(g);
+        UIController.resize();
+    }//GEN-LAST:event_boardComponentResized
 
     /**
      * @param args the command line arguments
@@ -240,6 +269,7 @@ public class GameWindow extends javax.swing.JFrame {
                 new GameWindow().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,12 +6,14 @@
 package towerdefenders.services;
 
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collection;
-import javax.swing.JPanel;
+//import javax.swing.JPanel;
 import towerdefenders.sprites.Sprite;
-import towerdefenders.utils.ImageLoader;
+//import towerdefenders.utils.ImageLoader;
 
 /**
  *
@@ -25,7 +27,7 @@ public class SpritesController {
     private Container container;
     
     //private ImageLoader imgLoader;
-    private boolean drawable = true;
+    //private boolean drawable = true;
     
     public SpritesController() {
         
@@ -56,6 +58,23 @@ public class SpritesController {
         //this.container.add((Component) spr);
     }
     
+    
+    public boolean updateSprite(Sprite spr) {
+        
+        for (Sprite sprite : sprites) {
+            
+            if (spr.equals(sprite)) {
+                
+                sprite = spr;
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    
+    
     public void removeSprite(Sprite spr) {
         
         for (Sprite sprite : sprites) {
@@ -76,6 +95,15 @@ public class SpritesController {
     public void removeAllSprite() {
         
         this.sprites.removeAll((Collection<Sprite>) sprites);
+    }
+    
+    
+    public void resizeAllPositions(double surfaceMultiplierX, double surfaceMultiplierY) {
+        
+        for (Sprite sprite : sprites) {
+            Point position = sprite.getLocation();
+            sprite.setLocation((int) (position.x * surfaceMultiplierX), (int) (position.y * surfaceMultiplierY));
+        }
     }
     
     
